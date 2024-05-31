@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+
+<body>
+    <!-- Creating hello world from Plain HTML Only -->
+    <div id="root">
+        <div id="roots"></div>
+        <h1>
+            Hello World from HTML
+        </h1>
+    </div>
+
+    <!-- Creating Hello world from javascript only  -->
+    <Script>
+        const heading = document.createElement('h1');
+        heading.innerHTML = "Hello world using javascript";
+
+        const root = document.getElementById('root');
+        root.appendChild(heading);
+    </Script>
+     
+    <!-- using React through CDN link only  -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ 
+    <!-- creating Hello wrold using React Only  -->
+    <script>
+        const heading2 = React.createElement("h1", {}, "Hello world using React"); //Here createElement is used for the creation of an HTML tag.
+        const root2 = ReactDom.createRoot(document.getElementById('roots')) //Here createRoot lets you create a root to display React components inside a browser DOM node.
+        root2.render(heading2);
+    </script>
+</body>
+
+</html>
