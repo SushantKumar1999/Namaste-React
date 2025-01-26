@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading2 = React.createElement(
   "h1",
   { id: "headings" },
@@ -6,7 +9,7 @@ const heading2 = React.createElement(
 
 //React.createelement is a object that will become HTML that browser will understand .
 
-const root2 = ReactDOM.createRoot(document.getElementById("roots")); //Here createRoot lets you create a root to display React components inside a browser DOM node.
+const root = ReactDOM.createRoot(document.getElementById("root")); //Here createRoot lets you create a root to display React components inside a browser DOM node.
 
 // If I have to buid this type of HTML structure using React
 // <div id="parent">
@@ -18,7 +21,7 @@ const root2 = ReactDOM.createRoot(document.getElementById("roots")); //Here crea
 
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I m the children"),
+    React.createElement("h1", {}, "I m the children "),
     React.createElement("h2", {}, "I m the children siblings"),
   ]),
   React.createElement("div", { id: "child2" }, [
@@ -27,4 +30,4 @@ const parent = React.createElement("div", { id: "parent" }, [
   ]),
 ]);
 console.log(parent);
-root2.render(parent);
+root.render(parent);
