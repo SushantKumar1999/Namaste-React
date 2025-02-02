@@ -1,14 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-  "h1",
-  {id:"heading"},
-  "Namaste React by Sushant Kumar"
+
+const Title = () => (
+  <h1> Sushant Kumar</h1>
 )
-const jsxHeading =  <h1> Namaste React by Sushant Kumar in JSX </h1>
+
+// React Functional Component
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    <h1>this is HeadingComponent </h1>    
+  </div>
+)
+
+// What we have done above is the component composition.
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(jsxHeading);
+root.render(<HeadingComponent />);
+
+
 
