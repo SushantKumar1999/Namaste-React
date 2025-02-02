@@ -1,33 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading2 = React.createElement(
+const heading = React.createElement(
   "h1",
-  { id: "headings" },
-  "Hello world using React"
-); //Here createElement is used for the creation of an HTML tag.
+  {id:"heading"},
+  "Namaste React by Sushant Kumar"
+)
+const jsxHeading =  <h1> Namaste React by Sushant Kumar in JSX </h1>
 
-//React.createelement is a object that will become HTML that browser will understand .
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById("root")); //Here createRoot lets you create a root to display React components inside a browser DOM node.
+root.render(jsxHeading);
 
-// If I have to buid this type of HTML structure using React
-// <div id="parent">
-//     <div id="child">
-//        <h1> I m the children </h1>
-//        <h2> I m the children siblings </h2>
-//     </div>
-// </div>
-
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I m the children "),
-    React.createElement("h2", {}, "I m the children siblings"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I m the children"),
-    React.createElement("h2", {}, "I m the children siblings"),
-  ]),
-]);
-console.log(parent);
-root.render(parent);

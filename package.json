@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Namaste React Learning",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "build parcel index.html",
     "test": "jest"
   },
   "repository": {
