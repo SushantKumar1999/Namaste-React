@@ -1,30 +1,63 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-// React Element
-const element = <span>React Element</span>
+import Logo from "/logo.png";
 
 
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src={Logo}></img>
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About US</li>
+          <li>Contact US</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-// React Element 
-const titles = (
-  <h1> 
-    this is an element 
-   {element}     {/*// this is how we put react element inside a react element */}
-  </h1>
-)
+const RestaurantCard = () => {
+  return (
+    <div className="res-card">
+      <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/gp1ityra6utvzqn6ghnv"></img>
+      <h3>Meghna Foods</h3>
+      <h3>North Indian Biryani , Asian</h3>
+      <h3>4.4 stars</h3>
+      <h3>38 mins</h3>
+    </div>
+  )
+}
 
-// React Functional Component 
-const Title = () => (
-  <h1> This is a functional Component </h1>
-)
+const Body = () => {
+  return (
+    <div className="body">
+    <div className="search">Search</div>
+    <div className="res-container">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+    </div>
+    </div>
+  )
+}
 
-// React Functional Component
-const HeadingComponent = () => (
-  <div id="container">
-     <Title />   {/*this is how we put a component inside a component  */}
-    {titles}    {/*this is how we put element inside a component  */}
-    <h1>this is HeadingComponent </h1>    
+
+const AppLayout = () => (
+  <div className="app">
+    <Header />
+    <Body />
   </div>
 )
 
@@ -32,7 +65,7 @@ const HeadingComponent = () => (
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent />);
+root.render(<AppLayout />);
 
 
 
