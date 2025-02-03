@@ -20,15 +20,29 @@ const Header = () => {
     </div>
   );
 };
+//Genral way of writing code 
+// const RestaurantCard = (props) => {
+//   return (
+//     <div className="res-card">
+//       <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/gp1ityra6utvzqn6ghnv"></img>
+//       <h3>{props.resname}</h3>
+//       <h3>{props.cusine}</h3>
+//       <h3>{props.stars}</h3>
+//       <h3>{props.eta}</h3>
+//     </div>
+//   )
+// }
 
-const RestaurantCard = () => {
+//After destructuring we can also write like this and there are also more way to write it 
+const RestaurantCard = (props) => {
+  const {resname, cusine, stars, eta} = props;
   return (
     <div className="res-card">
       <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/gp1ityra6utvzqn6ghnv"></img>
-      <h3>Meghna Foods</h3>
-      <h3>North Indian Biryani , Asian</h3>
-      <h3>4.4 stars</h3>
-      <h3>38 mins</h3>
+      <h3>{props.resname}</h3>
+      <h3>{props.cusine}</h3>
+      <h3>{props.stars}</h3>
+      <h3>{props.eta}</h3>
     </div>
   )
 }
@@ -38,16 +52,10 @@ const Body = () => {
     <div className="body">
     <div className="search">Search</div>
     <div className="res-container">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      <RestaurantCard resname= "Meghna Foods" cusine="North Indian Biryani, Asian" starts="4.4 stars" eta="35 min"/>
+      <RestaurantCard resname= "KFC" cusine="North Indian Biryani, Asian" starts="4.4 stars" eta="35 min"/>
+      <RestaurantCard resname= "Burger King" cusine="North Indian Biryani, Asian" starts="4.4 stars" eta="35 min"/>
+      <RestaurantCard resname= "Mac Donald" cusine="North Indian Biryani, Asian" starts="4.4 stars" eta="35 min"/>
     </div>
     </div>
   )
