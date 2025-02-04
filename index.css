@@ -12,7 +12,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    background: linear-gradient(to right, #662D8C, #ED1E79);
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -48,23 +48,6 @@ body {
 .body {
     padding: 20px;
     text-align: center;
-}
-
-/* Search Box */
-.search {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.search:hover {
-    background: #ff4b2b;
-    color: white;
 }
 
 /* Restaurant Card */
@@ -105,4 +88,56 @@ body {
 
 .res-card:hover img {
     transform: scale(1.1);
+}
+
+/* Search & Filter Container */
+.search-button-container {
+    display: flex;
+    justify-content: space-between;  /* Align to the left */
+    align-items: center;
+    gap: 15px;  /* Spacing between button and input */
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter Button */
+.filter-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #662D8C, #ED1E79);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover {
+    background: linear-gradient(to right, #5b297d, #ff4b2b);
+    transform: scale(1.05);
+}
+
+/* Search Bar */
+.search {
+    flex-grow: 1;  /* Makes input responsive */
+    max-width: 400px;  /* Limits width */
+    padding: 12px 15px;
+    border: 2px solid #662D8C;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.search::placeholder {
+    color: #888;
+}
+
+.search:focus {
+    border-color: #ff2e63;
+    box-shadow: 0 0 8px rgba(255, 75, 43, 0.4);
 }
