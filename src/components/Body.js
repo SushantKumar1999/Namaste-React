@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
+import { API_URL } from "../utils/constant";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
@@ -9,23 +10,21 @@ const Body = () => {
     fetchData();
   }, []);
 
-  const fetchData = async() => {
-    const data = await fetch (
-       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8575579&lng=77.7864057&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  const fetchData = async () => {
+    const data = await fetch(
+      API_URL
     );
 
     const json = await data.json();
     console.log(json);
-    //Optional Chaining
-    setListOfRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
-  }
+    setListOfRestaurants(
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
+  };
 
-//Conditional Rendering
-  if(listOfRestaurants.length === 0){
-    return <Shimmer />;
-  }
-
-  return (
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="search-button-container">
         <div className="filter">
@@ -35,7 +34,6 @@ const Body = () => {
               const filteredList = listOfRestaurants.filter(
                 (res) => res.info.avgRating > 4.3
               );
-              console.log("filteredlist" + filteredList)
               setListOfRestaurants(filteredList);
             }}
           >

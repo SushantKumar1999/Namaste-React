@@ -44,6 +44,31 @@ body {
     border-radius: 5px;
 }
 
+/* Login Button */
+.login {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #5B297D, #C41E66);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.login:hover {
+    background: linear-gradient(to right, #4E1F6D, #B21B5B);
+    transform: scale(1.05);
+}
+
+.login:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
 /* Body */
 .body {
     padding: 20px;
